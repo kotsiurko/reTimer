@@ -1,0 +1,9 @@
+[
+  { "lesson": 1, "start": "08:30", "end": "09:15" },
+  { "lesson": 2, "start": "09:25", "end": "10:10" },
+  { "lesson": 3, "start": "10:25", "end": "11:10" },
+  { "lesson": 4, "start": "11:25", "end": "12:10" },
+  { "lesson": 5, "start": "12:25", "end": "13:10" },
+  { "lesson": 4, "start": "13:20", "end": "14:05" },
+  { "lesson": 4, "start": "14:15", "end": "15:00" }
+]
