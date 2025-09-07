@@ -4,11 +4,11 @@ import React, { useState, useEffect } from "react";
 const lessons = [
   { lesson: 1, start: "08:30", end: "09:15" },
   { lesson: 2, start: "09:25", end: "10:10" },
-  { lesson: 3, start: "10:20", end: "11:05" },
-  { lesson: 4, start: "19:30", end: "19:55" },
-  { lesson: 5, start: "20:10", end: "20:52" },
-  { lesson: 6, start: "21:10", end: "21:55" },
-  { lesson: 7, start: "22:10", end: "22:55" },
+  { lesson: 3, start: "10:25", end: "11:10" },
+  { lesson: 4, start: "11:25", end: "12:10" },
+  { lesson: 5, start: "12:25", end: "13:10" },
+  { lesson: 6, start: "13:20", end: "14:05" },
+  { lesson: 7, start: "14:15", end: "15:00" },
 ];
 
 // функція для перетворення hh:mm у Date
