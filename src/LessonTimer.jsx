@@ -11,6 +11,16 @@ const lessons = [
   { lesson: 7, start: "14:15", end: "15:00" },
 ];
 
+const realLessons = [
+  { lesson: 1, start: "08:30", end: "09:15" },
+  { lesson: 2, start: "09:25", end: "10:10" },
+  { lesson: 3, start: "10:25", end: "11:10" },
+  { lesson: 4, start: "11:25", end: "12:10" },
+  { lesson: 5, start: "12:25", end: "13:10" },
+  { lesson: 6, start: "13:20", end: "14:05" },
+  { lesson: 7, start: "14:15", end: "15:00" },
+];
+
 // функція для перетворення hh:mm у Date
 function parseTime(timeStr) {
   const [hours, minutes] = timeStr.split(":").map(Number);
@@ -90,34 +100,37 @@ export default function LessonTimer() {
 
       {/* Інформація про урок або перерву */}
       {status === "lesson" && currentLesson && (
-        <div className="bg-orange-500 text-black rounded-2xl p-4 w-full max-w-sm text-center shadow-lg">
+        <div className="bg-yellow-500 text-black rounded-2xl p-4 w-full max-w-sm text-center shadow-lg">
           <div className="text-xl font-bold mb-2">
-            Урок {currentLesson.lesson}
+            {currentLesson.start} :: Урок {currentLesson.lesson} ::{" "}
+            {currentLesson.end}
           </div>
-          <div className="mb-2">
-            {currentLesson.start} — {currentLesson.end}
-          </div>
-          <div className="text-lg font-medium">
-            Залишилось: <b>{formatTime(timeLeft)}</b>
+          <div className="text-lg font-medium">Залишилось:</div>
+          <div className="font-medium text-gray-950 dark:text-white text-2xl">
+            {formatTime(timeLeft)}
           </div>
         </div>
       )}
 
       {status === "break" && nextLesson && (
-        <div className="bg-green-500 text-black rounded-2xl p-4 w-full max-w-sm text-center shadow-lg">
-          <div className="text-xl font-bold mb-2">Перерва</div>
+        <div className="bg-emerald-500 text-black rounded-2xl p-4 w-full max-w-sm text-center shadow-lg">
+          <div className="text-xl font-bold mb-2">Зараз перерва</div>
+          <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" />
           <div className="mb-2">
             Наступний урок: {nextLesson.lesson} ({nextLesson.start})
           </div>
-          <div className="text-lg font-medium">
-            Почнеться через: <b>{formatTime(timeLeft)}</b>
+          <div className="text-lg font-medium">Урок розпочнеться через:</div>
+          <div className="font-medium text-gray-950 dark:text-white text-2xl">
+            {formatTime(timeLeft)}
           </div>
         </div>
       )}
 
       {status === "end" && (
         <div className="bg-red-500 text-black rounded-2xl p-4 w-full max-w-sm text-center shadow-lg">
-          <div className="text-xl font-bold">Навчальний день завершено 🎉</div>
+          <div className="text-xl font-bold dark:text-white">
+            Навчальний день завершено 🎉
+          </div>
         </div>
       )}
 
